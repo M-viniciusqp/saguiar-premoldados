@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#151618">
+<meta name="description" content="Saguiar Premoldados: pré-moldados de concreto para obras no Maranhão. Estrutura forte. Resultado inteligente.">
 <title>Saguiar Premoldados</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +34,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--asphalt);
@@ -45,7 +52,7 @@ img, svg { max-width: 100%; }
 .tone-light { --bg: var(--paper);   --fg: #141517;     --mut: #5A5B5E;      --ln: rgba(20,21,23,.15);   --card: #fff;            --accent: var(--amber-ink); }
 .tone-yellow{ --bg: var(--yellow);  --fg: #141517;     --mut: #3d3200;      --ln: rgba(20,21,23,.25);   --card: var(--asphalt);  --accent: #141517; }
 
-.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: var(--gutter); }
+.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px)) max(var(--gutter), env(safe-area-inset-right, 0px)); }
 section { background: var(--bg); color: var(--fg); padding-block: clamp(64px, 9vw, 120px); position: relative; }
 
 .eyebrow {
@@ -55,7 +62,7 @@ section { background: var(--bg); color: var(--fg); padding-block: clamp(64px, 9v
 .eyebrow::before { content: ""; width: 28px; height: 3px; background: currentColor; }
 
 h1, h2, h3 { font-family: var(--display); text-transform: uppercase; margin: 0; text-wrap: balance; }
-h2 { font-weight: 900; font-stretch: 108%; font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1; letter-spacing: -.01em; }
+h2 { font-weight: 900; font-stretch: 104%; font-size: clamp(1.7rem, 4.6vw, 3.6rem); line-height: 1; letter-spacing: -.01em; }
 .lead { color: var(--mut); font-size: 1.15rem; max-width: 56ch; margin: 20px 0 0; }
 
 /* botões */
@@ -117,7 +124,7 @@ h2 { font-weight: 900; font-stretch: 108%; font-size: clamp(2rem, 4.6vw, 3.6rem)
 }
 .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
 .hero-grid > * { min-width: 0; }
-.hero h1 { font-weight: 900; font-stretch: 100%; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: .95; letter-spacing: -.015em; }
+.hero h1 { font-weight: 900; font-stretch: 100%; font-size: clamp(2.05rem, 5.6vw, 5rem); line-height: .95; letter-spacing: -.015em; }
 .hero h1 em { font-style: normal; color: var(--yellow); display: block; }
 .hero .lead { color: #c3c4c6; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
@@ -143,7 +150,7 @@ h2 { font-weight: 900; font-stretch: 108%; font-size: clamp(2rem, 4.6vw, 3.6rem)
 .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid rgba(255,255,255,.14); }
 .hero-stats > div { padding: 26px 20px 30px 0; min-width: 0; }
 .hero-stats > div + div { padding-left: 24px; border-left: 1px solid rgba(255,255,255,.14); }
-.hero-stats strong { display: block; font-family: var(--display); font-weight: 900; font-stretch: 80%; font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
+.hero-stats strong { display: block; font-family: var(--display); font-weight: 900; font-stretch: 80%; font-size: clamp(1.8rem, 4.2vw, 3.4rem); line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
 .hero-stats strong i { font-style: normal; color: var(--yellow); }
 .hero-stats span { display: block; font-size: .92rem; color: var(--muted); margin-top: 8px; }
 @media (max-width: 900px) {
@@ -302,12 +309,95 @@ footer.site { background: var(--ink); padding-block: 56px 28px; border-top: 4px 
 .js .rv { opacity: .2; transform: translateY(28px); transition: opacity .7s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
 .js .rv.in { opacity: 1; transform: none; }
 
+/* ---------- celular ---------- */
+@media (max-width: 900px) {
+  section { padding-block: clamp(52px, 11vw, 80px); }
+  .stage { max-width: 360px; }
+  .products-head { margin-bottom: 28px; gap: 20px; }
+  .rev-head { gap: 20px; }
+  .score strong { font-size: 3.2rem; }
+}
+@media (max-width: 640px) {
+  :root { --chamfer: 11px; }
+  body { font-size: 1rem; }
+  .lead { font-size: 1.05rem; margin-top: 16px; }
+  .eyebrow { font-size: .72rem; margin-bottom: 14px; }
+  .nav .wrap { height: 62px; }
+  .links { top: 62px; }
+  .brand .m { width: 38px; height: 32px; }
+  .brand b { font-size: 1.1rem; }
+  .brand small { font-size: .56rem; letter-spacing: .36em; }
+
+  .hero { padding-block: 28px 0; }
+  .hero-cta { flex-direction: column; align-items: stretch; margin-top: 26px; }
+  .hero-cta .btn { justify-content: center; width: 100%; }
+  .hero-grid { gap: 8px; }
+  .stage { max-width: 300px; }
+  .tag { font-size: .62rem; padding: 4px 7px; }
+  .tag.t1 { top: 0; right: 0; }
+  .tag.t2 { left: 0; bottom: 18%; }
+  .tag.t3 { display: none; }
+  .hero-stats { margin-top: 28px; }
+  .marquee span { font-size: .95rem; padding-block: 12px; }
+  .marquee span::after { margin-inline: 18px; }
+
+  .values li { padding-block: 18px; }
+  .values li:hover { padding-left: 0; }
+  .values li:hover::before { width: 0; }
+
+  .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); padding-bottom: 6px; scrollbar-width: none; width: calc(100% + var(--gutter) * 2); }
+  .filters::-webkit-scrollbar { display: none; }
+  .filters button { flex: none; padding: 11px 15px; font-size: .74rem; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+  .card:hover { transform: none; }
+  .ph .cat { font-size: .56rem; padding: 4px 7px 4px 9px; top: 10px; letter-spacing: .06em; }
+  .card-body { padding: 14px 12px 16px; gap: 8px; }
+  .card h3 { font-size: 1rem; }
+  .card p { font-size: .84rem; line-height: 1.4; }
+  .chips span { font-size: .66rem; padding: 3px 6px; }
+  .card a.ask { font-size: .76rem; padding-block: 6px; }
+
+  .steps { margin-top: 40px; gap: 30px; }
+  .step { padding-left: 66px; }
+  .step .n { width: 44px; height: 44px; }
+  .steps::before, .steps::after { left: 20px; }
+
+  .score strong { font-size: 2.8rem; }
+  .carousel { gap: 14px; margin-top: 30px; }
+  .rev { flex-basis: 84%; padding: 22px 20px; gap: 16px; }
+  .rev blockquote { font-size: 1.02rem; }
+  .rev blockquote::before { font-size: 3rem; }
+  .car-ctl button { width: 48px; height: 48px; }
+
+  .contact h2 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .info { margin-top: 24px; }
+  .info li { padding-block: 14px; }
+  .form { padding: 24px 18px 28px; clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%); }
+  .field input, .field select { font-size: 16px; }
+  .field { margin-bottom: 14px; }
+
+  footer.site { padding-block: 40px 24px; }
+  .foot { gap: 24px; }
+  .legal { margin-top: 28px; }
+  .wa { width: 54px; height: 54px; }
+  .wa svg { width: 28px; height: 28px; }
+}
+@media (max-width: 360px) {
+  .grid { gap: 10px; }
+  .card h3 { font-size: .94rem; }
+  .hero-stats strong { font-size: 1.55rem; }
+  .hero-stats span { font-size: .78rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .rv { opacity: 1; transform: none; }
 }
 </style>
+</head>
+<body>
 
 <!-- defs compartilhadas pelas ilustrações dos produtos -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -801,3 +891,5 @@ document.documentElement.classList.add('js');
   $$('.rv, .hero-stats, #steps').forEach(el => io.observe(el));
 })();
 </script>
+</body>
+</html>
