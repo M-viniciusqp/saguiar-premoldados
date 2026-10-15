@@ -1,0 +1,14 @@
+{
+  "name": "Saguiar Premoldados",
+  "short_name": "Saguiar",
+  "description": "Pré-moldados de concreto em São Luís, Maranhão.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f3ee",
+  "theme_color": "#f4f3ee",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

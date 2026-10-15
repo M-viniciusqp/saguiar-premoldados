@@ -1,0 +1,9 @@
+FOTOS REAIS DOS PRODUTOS
+
+Coloque aqui as fotos com estes nomes (formato .jpg, proporção 4:3, de 1200x900 px):
+
+  laje.jpg      bloco.jpg     poste.jpg     tubo.jpg
+  mourao.jpg    muro.jpg      piso.jpg      meiofio.jpg
+
+Depois, em assets/js/config.js, troque  photos: false  por  photos: true.
+O site passa a mostrar as fotos no lugar das ilustrações.
