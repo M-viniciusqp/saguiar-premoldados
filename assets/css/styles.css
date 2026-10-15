@@ -137,7 +137,7 @@ h2 {
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--header-h); }
 
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand__mark { width: 38px; height: 47px; flex: none; }
+.brand__mark { width: 54px; height: 30px; flex: none; }
 .brand__name {
   display: block; font-family: var(--font-display); font-weight: 900; font-stretch: 112%;
   font-size: 1.25rem; line-height: 1; letter-spacing: 0.02em;
@@ -182,8 +182,8 @@ h2 {
 .hero .lead { color: #4a4b4e; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 
-.stage { position: relative; width: 100%; max-width: 430px; margin-inline: auto; aspect-ratio: 618 / 766; }
-.stage__mark { position: absolute; inset: 0; transition: transform 0.3s ease-out; }
+.stage { position: relative; width: 100%; max-width: 560px; margin-inline: auto; aspect-ratio: 360 / 250; }
+.stage__mark { position: absolute; inset: 14% 0 6%; transition: transform 0.3s ease-out; }
 .stage__mark svg { width: 100%; height: 100%; display: block; overflow: visible; filter: drop-shadow(0 22px 22px rgba(20, 21, 23, 0.22)); }
 
 .pc { animation: piece 0.95s cubic-bezier(0.2, 0.9, 0.25, 1) both; animation-delay: calc(var(--i) * 90ms + 0.1s); }
@@ -198,9 +198,9 @@ h2 {
   animation: float 5s ease-in-out infinite;
 }
 .tag b { font-weight: 500; color: var(--amber-ink); }
-.tag--1 { top: 6%; right: -4%; }
-.tag--2 { top: 46%; left: -8%; animation-delay: -1.6s; }
-.tag--3 { bottom: 6%; right: -2%; animation-delay: -3.2s; }
+.tag--1 { top: 2%; right: 2%; }
+.tag--2 { bottom: 22%; left: 0; animation-delay: -1.6s; }
+.tag--3 { bottom: 2%; right: 8%; animation-delay: -3.2s; }
 @keyframes float { 50% { transform: translateY(-8px); } }
 
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(32px, 6vw, 80px); border-top: 1px solid rgba(20, 21, 23, 0.2); }
@@ -429,7 +429,7 @@ h2 {
 
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .stage { max-width: 320px; }
+  .stage { max-width: 480px; }
   .about, .contact { grid-template-columns: 1fr; }
   .products__head { margin-bottom: 28px; gap: 20px; }
   .reviews__head { gap: 20px; }
@@ -467,18 +467,18 @@ h2 {
   .lead { margin-top: 16px; font-size: 1.05rem; }
   .eyebrow { margin-bottom: 14px; font-size: 0.72rem; }
 
-  .brand__mark { width: 32px; height: 40px; }
+  .brand__mark { width: 46px; height: 26px; }
   .brand__name { font-size: 1.1rem; }
   .brand__sub { font-size: 0.56rem; letter-spacing: 0.36em; }
 
   .hero__grid { gap: 8px; }
   .hero__cta { flex-direction: column; align-items: stretch; margin-top: 26px; }
   .hero__cta .btn { justify-content: center; width: 100%; }
-  .stage { max-width: 250px; }
+  .stage { max-width: 380px; }
   .tag { padding: 4px 7px; font-size: 0.62rem; }
-  .tag--1 { top: 2%; right: -6%; }
-  .tag--2 { top: 52%; left: -6%; }
-  .tag--3 { display: none; }
+  .tag--1 { top: 0; right: 0; }
+  .tag--2 { bottom: 20%; left: 0; }
+  .tag--3 { bottom: 0; right: 4%; }
   .stats { margin-top: 28px; }
   .stats > div { padding: 20px 8px 24px 0; }
   .stats > div + div { padding-left: 14px; }
