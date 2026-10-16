@@ -43,17 +43,6 @@
       if (window.SaguiarArt && window.SaguiarArt.has(id)) {
         media.insertAdjacentHTML('afterbegin', window.SaguiarArt.render(id));
       }
-      if (cfg.photos) {
-        var img = new Image();
-        img.onload = function () {
-          img.alt = name;
-          img.loading = 'lazy';
-          img.decoding = 'async';
-          var svg = $('svg', media);
-          if (svg) media.replaceChild(img, svg); else media.insertBefore(img, media.firstChild);
-        };
-        img.src = (cfg.photoPath || '') + id + (cfg.photoExt || '.jpg');
-      }
     });
 
     var filters = $('.filters');

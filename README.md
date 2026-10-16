@@ -37,9 +37,9 @@ com endereço completo, e criar o `sitemap.xml`. Isso melhora o Google e a prév
 
 - **Telefone e Instagram:** `assets/js/config.js` e os links `wa.me` e `instagram.com` no `index.html`.
 - **Textos, produtos e avaliações:** direto no `index.html`.
-- **Fotos reais:** coloque `laje.jpg`, `bloco.jpg`, `poste.jpg`, `tubo.jpg`, `mourao.jpg`,
-  `muro.jpg`, `piso.jpg` e `meiofio.jpg` em `assets/img/produtos/` e troque
-  `photos: false` por `photos: true` em `assets/js/config.js`.
+- **Fotos dos produtos:** ficam em `assets/img/produtos/` (JPG 960x720). Para trocar uma foto,
+  substitua o arquivo mantendo o nome. Veja o `LEIAME.txt` da pasta para adicionar fotos nos
+  produtos que ainda têm ilustração.
 - **Cores e fontes:** tokens no início de `assets/css/styles.css`.
 
 ## Rodar localmente
