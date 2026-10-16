@@ -336,17 +336,16 @@
               <span class="field__msg" role="alert"></span>
             </div>
           </div>
-          <div class="field">
-            <label for="produto">Produto de interesse</label>
-            <select id="produto" name="produto">
-              <option value="">Ainda não sei, quero ajuda</option>
-              <option>Bloco estrutural</option>
-              <option>Bloco de vedação</option>
-              <option>Piso sextavado</option>
-              <option>Piso intertravado</option>
-              <option>Painel pré-moldado</option>
-            </select>
-          </div>
+          <fieldset class="field field--choices">
+            <legend>Produtos de interesse <em>(escolha um ou mais)</em></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="produto" value="Bloco estrutural"><span>Bloco estrutural</span></label>
+              <label class="choice"><input type="checkbox" name="produto" value="Bloco de vedação"><span>Bloco de vedação</span></label>
+              <label class="choice"><input type="checkbox" name="produto" value="Piso sextavado"><span>Piso sextavado</span></label>
+              <label class="choice"><input type="checkbox" name="produto" value="Piso intertravado"><span>Piso intertravado</span></label>
+              <label class="choice"><input type="checkbox" name="produto" value="Painel pré-moldado"><span>Painel pré-moldado</span></label>
+            </div>
+          </fieldset>
           <button class="btn" type="submit">Enviar pelo WhatsApp <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           <div class="form__status" id="form-status" role="status" aria-live="polite"></div>
         </form>

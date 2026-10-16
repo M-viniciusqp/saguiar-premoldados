@@ -53,9 +53,12 @@
       });
     }
 
-    var select = $('#produto');
+    // "Pedir orçamento" no cartão marca o produto no formulário (sem desmarcar os outros)
     $$('[data-ask]').forEach(function (a) {
-      a.addEventListener('click', function () { if (select) select.value = a.getAttribute('data-ask'); });
+      a.addEventListener('click', function () {
+        var nome = a.getAttribute('data-ask');
+        $$('input[name="produto"]').forEach(function (box) { if (box.value === nome) box.checked = true; });
+      });
     });
   }
 
@@ -165,7 +168,10 @@
       e.preventDefault();
       var nome = $('#nome').value.trim();
       var fone = tel.value.trim();
-      var produto = $('#produto').value;
+      var escolhidos = $$('input[name="produto"]:checked').map(function (box) { return box.value; });
+      var produto = escolhidos.length > 1
+        ? escolhidos.slice(0, -1).join(', ') + ' e ' + escolhidos[escolhidos.length - 1]
+        : (escolhidos[0] || '');
       var valid = check('f-nome', nome.length >= 3, 'Informe seu nome.');
       valid = check('f-tel', fone.replace(/\D/g, '').length >= 10, 'Informe um telefone com DDD.') && valid;
       if (!valid) return;
