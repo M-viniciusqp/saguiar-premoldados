@@ -255,10 +255,10 @@ h2 {
 .filters button:hover { border-color: var(--ink); }
 .filters button[aria-pressed="true"] { background: var(--yellow); border-color: var(--yellow); }
 
-.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; list-style: none; }
+.grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; list-style: none; }
 
 .card {
-  display: flex; flex-direction: column; min-width: 0;
+  display: flex; flex-direction: column; min-width: 0; flex: 0 0 calc((100% - 40px) / 3);
   background: var(--white);
   box-shadow: inset 0 0 0 1px rgba(20, 21, 23, 0.08);
   clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
@@ -425,7 +425,7 @@ h2 {
 
 /* ---------- 17. Responsivo ---------- */
 @media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .card { flex-basis: calc((100% - 20px) / 2); }
 }
 
 @media (max-width: 900px) {
@@ -494,7 +494,8 @@ h2 {
   .filters::-webkit-scrollbar { display: none; }
   .filters button { flex: none; padding: 11px 15px; font-size: 0.74rem; }
 
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .grid { gap: 12px; }
+  .card { flex-basis: calc((100% - 12px) / 2); }
   .card { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
   .card:hover { transform: none; }
   .card__cat { top: 10px; padding: 4px 7px 4px 9px; font-size: 0.56rem; letter-spacing: 0.06em; }
@@ -531,6 +532,7 @@ h2 {
 
 @media (max-width: 360px) {
   .grid { gap: 10px; }
+  .card { flex-basis: calc((100% - 10px) / 2); }
   .card h3 { font-size: 0.94rem; }
   .stats strong { font-size: 1.55rem; }
   .stats > div > span { font-size: 0.78rem; }

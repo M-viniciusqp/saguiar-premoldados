@@ -14,8 +14,7 @@ site.webmanifest        Ícones e cores do site
 assets/
   css/styles.css        Estilos (tokens, componentes, seções, responsivo)
   js/boot.js            Marca que o JS está ativo (roda antes da pintura)
-  js/config.js          Telefone, Instagram e opção de fotos reais
-  js/art.js             Ilustrações provisórias dos produtos
+  js/config.js          Telefone (WhatsApp) e Instagram
   js/main.js            Menu, filtros, carrossel, contadores e formulário
   img/                  Favicon, ícones e imagem de compartilhamento
   img/produtos/         Fotos reais dos produtos (veja LEIAME.txt)
@@ -37,9 +36,8 @@ com endereço completo, e criar o `sitemap.xml`. Isso melhora o Google e a prév
 
 - **Telefone e Instagram:** `assets/js/config.js` e os links `wa.me` e `instagram.com` no `index.html`.
 - **Textos, produtos e avaliações:** direto no `index.html`.
-- **Fotos dos produtos:** ficam em `assets/img/produtos/` (JPG 960x720). Para trocar uma foto,
-  substitua o arquivo mantendo o nome. Veja o `LEIAME.txt` da pasta para adicionar fotos nos
-  produtos que ainda têm ilustração.
+- **Fotos dos produtos:** ficam em `assets/img/produtos/` (JPG 960x720, fundo branco). Para trocar uma
+  foto, substitua o arquivo mantendo o nome.
 - **Cores e fontes:** tokens no início de `assets/css/styles.css`.
 
 ## Rodar localmente

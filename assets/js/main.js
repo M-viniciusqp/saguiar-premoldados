@@ -35,16 +35,8 @@
     }
   }
 
-  /* ---------- produtos: ilustração ou foto real ---------- */
+  /* ---------- produtos: filtros e pedido de orçamento ---------- */
   function initProducts() {
-    $$('.card__media[data-art]').forEach(function (media) {
-      var id = media.getAttribute('data-art');
-      var name = media.getAttribute('data-name') || '';
-      if (window.SaguiarArt && window.SaguiarArt.has(id)) {
-        media.insertAdjacentHTML('afterbegin', window.SaguiarArt.render(id));
-      }
-    });
-
     var filters = $('.filters');
     var cards = $$('.grid .card');
     if (filters) {
