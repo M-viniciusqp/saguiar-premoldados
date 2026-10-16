@@ -32,6 +32,12 @@ assets/
 Peça para atualizar no `index.html`: `<link rel="canonical">`, `og:url` e `og:image`
 com endereço completo, e criar o `sitemap.xml`. Isso melhora o Google e a prévia no WhatsApp.
 
+## Atualizações e cache
+
+CSS e JS são revalidados a cada visita (`vercel.json`), então mudanças aparecem logo. Imagens ficam em cache
+por 7 dias; ao trocar uma foto, mude o nome do arquivo ou aguarde.
+Ao alterar `styles.css` ou os `.js`, troque o número de versão (`?v=...`) no `index.html`.
+
 ## Como editar
 
 - **Telefone e Instagram:** `assets/js/config.js` e os links `wa.me` e `instagram.com` no `index.html`.

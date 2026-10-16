@@ -57,7 +57,12 @@
     $$('[data-ask]').forEach(function (a) {
       a.addEventListener('click', function () {
         var nome = a.getAttribute('data-ask');
-        $$('input[name="produto"]').forEach(function (box) { if (box.value === nome) box.checked = true; });
+        $$('input[name="produto"]').forEach(function (box) {
+          if (box.value === nome && !box.checked) {
+            box.checked = true;
+            box.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
       });
     });
   }
@@ -143,6 +148,40 @@
     setInterval(function () { if (!paused && !document.hidden) go(1); }, 7000);
   }
 
+  /* ---------- lista suspensa com seleção múltipla (produtos do orçamento) ---------- */
+  function initMultiselect() {
+    var root = $('.multiselect');
+    if (!root) return;
+    var btn = $('.ms__trigger', root);
+    var panel = $('.ms__panel', root);
+    var out = $('.ms__value', root);
+    var boxes = $$('input[name="produto"]', root);
+    var placeholder = out.textContent;
+
+    function setOpen(open) {
+      panel.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+    }
+    function summarize() {
+      var chosen = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+      out.classList.toggle('is-placeholder', chosen.length === 0);
+      out.textContent = chosen.length === 0 ? placeholder
+        : chosen.length <= 2 ? chosen.join(', ')
+        : chosen.length + ' produtos selecionados';
+    }
+
+    btn.addEventListener('click', function () { setOpen(panel.hidden); });
+    panel.addEventListener('change', summarize);
+    document.addEventListener('click', function (e) { if (!root.contains(e.target)) setOpen(false); });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !panel.hidden) { setOpen(false); btn.focus(); }
+    });
+    root.addEventListener('focusout', function (e) {
+      if (e.relatedTarget && !root.contains(e.relatedTarget)) setOpen(false);
+    });
+    summarize();
+  }
+
   /* ---------- formulário: monta a mensagem e abre o WhatsApp ---------- */
   function initForm() {
     var form = $('#form');
@@ -200,6 +239,7 @@
     initParallax();
     initReveal();
     initCarousel();
+    initMultiselect();
     initForm();
     initYear();
   }
