@@ -1,7 +1,7 @@
 FOTOS DOS PRODUTOS
 
 Arquivos usados no site (JPG 960x720, proporção 4:3, fundo branco):
-  bloco-estrutural.jpg   bloco-vedacao.jpg   piso-sextavado.jpg
-  piso-intertravado.jpg  painel.jpg
+  bloco-estrutural.jpg   bloco-vedacao.jpg   painel.jpg   meio-fio.jpg
+  piso-sextavado.jpg     piso-intertravado.jpg   paver-holandes.jpg
 
 Para trocar uma foto, substitua o arquivo mantendo o mesmo nome.
