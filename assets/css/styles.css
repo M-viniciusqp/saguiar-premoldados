@@ -280,7 +280,7 @@ h2 {
 .card__body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 20px 20px 22px; }
 .card h3 { font-weight: 800; font-stretch: 104%; font-size: 1.28rem; line-height: 1.1; }
 .card p { color: var(--muted); font-size: 0.96rem; }
-.card__spec { margin-top: 2px; }
+.card__spec { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 .card__spec span {
   display: inline-block; padding: 4px 9px;
   border: 1px solid rgba(20, 21, 23, 0.22);
