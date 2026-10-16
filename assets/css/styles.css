@@ -280,6 +280,12 @@ h2 {
 .card__body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 20px 20px 22px; }
 .card h3 { font-weight: 800; font-stretch: 104%; font-size: 1.28rem; line-height: 1.1; }
 .card p { color: var(--muted); font-size: 0.96rem; }
+.card__spec { margin-top: 2px; }
+.card__spec span {
+  display: inline-block; padding: 4px 9px;
+  border: 1px solid rgba(20, 21, 23, 0.22);
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: #2b2c2f; font-variant-numeric: tabular-nums;
+}
 .card__cta {
   display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px;
   font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
@@ -503,6 +509,7 @@ h2 {
   .card h3 { font-size: 1rem; }
   .card p { font-size: 0.84rem; line-height: 1.4; }
   .card__cta { padding-block: 6px 0; font-size: 0.76rem; }
+  .card__spec span { padding: 3px 6px; font-size: 0.66rem; }
 
   .steps { margin-top: 40px; gap: 30px; }
   .steps::before, .steps::after { left: 20px; }
