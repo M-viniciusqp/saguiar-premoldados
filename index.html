@@ -26,8 +26,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Barlow:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261018">
-  <script src="assets/js/boot.js?v=20261018"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261019">
+  <script src="assets/js/boot.js?v=20261019"></script>
 
   <script type="application/ld+json">
   {
@@ -117,7 +117,7 @@
 
         <div class="stats">
           <div><strong><span data-count="5" data-decimals="1">5,0</span><i>/5</i></strong><span>nota dos clientes no Google</span></div>
-          <div><strong><span data-count="7">7</span></strong><span>linhas de produtos</span></div>
+          <div><strong><span data-count="8">8</span></strong><span>produtos</span></div>
           <div><strong><span data-count="98">98</span><i>%</i></strong><span>entregas no prazo</span></div>
         </div>
       </div>
@@ -172,27 +172,37 @@
 
         <ul class="grid">
           <li class="card" data-cat="Alvenaria">
-            <div class="card__media"><img src="assets/img/produtos/bloco-estrutural.jpg" width="960" height="720" alt="Bloco de concreto estrutural com dois furos" loading="lazy" decoding="async"><span class="card__cat">Alvenaria</span></div>
+            <div class="card__media"><img src="assets/img/produtos/bloco-estrutural.jpg" width="960" height="720" alt="Bloco de concreto estrutural de 19 cm com dois furos" loading="lazy" decoding="async"><span class="card__cat">Alvenaria</span></div>
             <div class="card__body">
-              <h3>Bloco estrutural</h3>
+              <h3>Bloco estrutural 19 cm</h3>
               <p>Para paredes que sustentam a obra.</p>
               <div class="card__spec">
                 <div class="spec">
                   <p class="spec__size">19 × 19 × 39 cm</p>
                   <dl class="spec__stats"><div><dt>Resistência</dt><dd>6 MPa</dd></div><div><dt>Peso</dt><dd>15 kg</dd></div><div><dt>Por palete</dt><dd>90</dd></div></dl>
                 </div>
+              </div>
+              <a class="card__cta" href="#contato" data-ask="Bloco estrutural 19 cm">Pedir orçamento</a>
+            </div>
+          </li>
+          <li class="card" data-cat="Alvenaria">
+            <div class="card__media"><img src="assets/img/produtos/bloco-vedacao.jpg" width="960" height="720" alt="Bloco de concreto estrutural de 14 cm com dois furos" loading="lazy" decoding="async"><span class="card__cat">Alvenaria</span></div>
+            <div class="card__body">
+              <h3>Bloco estrutural 14 cm</h3>
+              <p>Para paredes que sustentam a obra.</p>
+              <div class="card__spec">
                 <div class="spec">
                   <p class="spec__size">14 × 19 × 39 cm</p>
                   <dl class="spec__stats"><div><dt>Resistência</dt><dd>6 MPa</dd></div><div><dt>Peso</dt><dd>12,6 kg</dd></div><div><dt>Por palete</dt><dd>114</dd></div></dl>
                 </div>
               </div>
-              <a class="card__cta" href="#contato" data-ask="Bloco estrutural">Pedir orçamento</a>
+              <a class="card__cta" href="#contato" data-ask="Bloco estrutural 14 cm">Pedir orçamento</a>
             </div>
           </li>
           <li class="card" data-cat="Alvenaria">
-            <div class="card__media"><img src="assets/img/produtos/bloco-vedacao.jpg" width="960" height="720" alt="Bloco de concreto de vedação com dois furos" loading="lazy" decoding="async"><span class="card__cat">Alvenaria</span></div>
+            <div class="card__media"><img src="assets/img/produtos/bloco-vedacao.jpg" width="960" height="720" alt="Bloco de concreto de vedação de 14 cm com dois furos" loading="lazy" decoding="async"><span class="card__cat">Alvenaria</span></div>
             <div class="card__body">
-              <h3>Bloco de vedação</h3>
+              <h3>Bloco de vedação 14 cm</h3>
               <p>Para levantar paredes e fechamentos.</p>
               <div class="card__spec">
                 <div class="spec">
@@ -200,7 +210,7 @@
                   <dl class="spec__stats"><div><dt>Resistência</dt><dd>4 MPa</dd></div><div><dt>Peso</dt><dd>10 kg</dd></div><div><dt>Por palete</dt><dd>114</dd></div></dl>
                 </div>
               </div>
-              <a class="card__cta" href="#contato" data-ask="Bloco de vedação">Pedir orçamento</a>
+              <a class="card__cta" href="#contato" data-ask="Bloco de vedação 14 cm">Pedir orçamento</a>
             </div>
           </li>
           <li class="card" data-cat="Alvenaria">
@@ -407,8 +417,9 @@
               <svg class="ms__chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>
             </button>
             <div class="ms__panel" id="produto-panel" role="group" aria-label="Produtos de interesse" hidden>
-              <label class="ms__option"><input type="checkbox" name="produto" value="Bloco estrutural"><span class="ms__box" aria-hidden="true"></span><span>Bloco estrutural</span></label>
-              <label class="ms__option"><input type="checkbox" name="produto" value="Bloco de vedação"><span class="ms__box" aria-hidden="true"></span><span>Bloco de vedação</span></label>
+              <label class="ms__option"><input type="checkbox" name="produto" value="Bloco estrutural 19 cm"><span class="ms__box" aria-hidden="true"></span><span>Bloco estrutural 19 cm</span></label>
+              <label class="ms__option"><input type="checkbox" name="produto" value="Bloco estrutural 14 cm"><span class="ms__box" aria-hidden="true"></span><span>Bloco estrutural 14 cm</span></label>
+              <label class="ms__option"><input type="checkbox" name="produto" value="Bloco de vedação 14 cm"><span class="ms__box" aria-hidden="true"></span><span>Bloco de vedação 14 cm</span></label>
               <label class="ms__option"><input type="checkbox" name="produto" value="Painel pré-moldado"><span class="ms__box" aria-hidden="true"></span><span>Painel pré-moldado</span></label>
               <label class="ms__option"><input type="checkbox" name="produto" value="Meio-fio"><span class="ms__box" aria-hidden="true"></span><span>Meio-fio</span></label>
               <label class="ms__option"><input type="checkbox" name="produto" value="Piso sextavado"><span class="ms__box" aria-hidden="true"></span><span>Piso sextavado</span></label>
@@ -453,7 +464,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.83.83-3.03-.2-.31A8.1 8.1 0 1 1 12.04 20Zm4.45-6.06c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06a6.6 6.6 0 0 1-1.95-1.2 7.3 7.3 0 0 1-1.35-1.68c-.14-.24 0-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.47-.4-.4-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.1 3.64.57.25 1.02.4 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
   </a>
 
-  <script src="assets/js/config.js?v=20261018" defer></script>
-  <script src="assets/js/main.js?v=20261018" defer></script>
+  <script src="assets/js/config.js?v=20261019" defer></script>
+  <script src="assets/js/main.js?v=20261019" defer></script>
 </body>
 </html>
