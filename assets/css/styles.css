@@ -282,14 +282,19 @@ h2 {
 .card__body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 20px 20px 22px; }
 .card h3 { font-weight: 800; font-stretch: 104%; font-size: 1.28rem; line-height: 1.1; }
 .card p { color: var(--muted); font-size: 0.96rem; }
-.card__spec { display: grid; gap: 10px; margin: 4px 0 0; }
-.card__spec > div { display: grid; gap: 6px; }
-.card__spec dt { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.card__spec dd { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
-.card__spec dd span {
-  padding: 4px 9px; border: 1px solid rgba(20, 21, 23, 0.22);
-  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.03em; color: #2b2c2f; font-variant-numeric: tabular-nums; white-space: nowrap;
+.card__spec { display: grid; gap: 12px; margin-top: 4px; }
+.spec { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+.spec__size {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 0;
+  font-family: var(--font-mono); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; color: var(--ink); font-variant-numeric: tabular-nums;
 }
+.spec__size::before { content: ""; width: 7px; height: 7px; margin-right: 2px; align-self: center; background: var(--yellow); }
+.spec__size small { font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.spec__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 6px; margin: 0; }
+.spec__stats > div { display: flex; flex-direction: column-reverse; gap: 3px; padding: 8px 9px; background: var(--paper); }
+.spec__stats dd { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 0.98rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.spec__stats dt { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.spec__note { margin: 0; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--amber-ink); }
 .card__cta {
   display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px;
   font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
@@ -540,10 +545,14 @@ h2 {
   .card h3 { font-size: 1rem; }
   .card p { font-size: 0.84rem; line-height: 1.4; }
   .card__cta { padding-block: 6px 0; font-size: 0.76rem; }
-  .card__spec { gap: 8px; }
-  .card__spec dd { gap: 5px; }
-  .card__spec dd span { padding: 3px 6px; font-size: 0.66rem; }
-  .card__spec dt { font-size: 0.58rem; }
+  .card__spec { gap: 10px; }
+  .spec { gap: 6px; padding-top: 8px; }
+  .spec__size { font-size: 0.7rem; }
+  .spec__stats { grid-template-columns: repeat(auto-fit, minmax(54px, 1fr)); gap: 4px; }
+  .spec__stats > div { padding: 6px; }
+  .spec__stats dd { font-size: 0.82rem; }
+  .spec__stats dt { font-size: 0.52rem; }
+  .spec__note { font-size: 0.6rem; }
 
   .steps { margin-top: 40px; gap: 30px; }
   .steps::before, .steps::after { left: 20px; }
