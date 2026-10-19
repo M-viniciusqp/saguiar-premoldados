@@ -182,6 +182,84 @@
     summarize();
   }
 
+  /* ---------- quantidade de cada produto (aparece ao marcar o produto) ---------- */
+  function initQuantities() {
+    var box = $('#qty');
+    var list = $('#qty-list');
+    if (!box || !list) return;
+    var checks = $$('input[name="produto"]');
+    var rows = {};
+
+    function el(tag, attrs, text) {
+      var node = document.createElement(tag);
+      Object.keys(attrs || {}).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+      if (text) node.textContent = text;
+      return node;
+    }
+
+    function makeRow(check) {
+      var name = check.value;
+      var units = (check.getAttribute('data-units') || 'unidades').split(',');
+      var row = el('div', { 'class': 'qty__row', 'data-product': name });
+      var head = el('div', { 'class': 'qty__head' });
+      head.appendChild(el('span', { 'class': 'qty__name' }, name));
+      var controls = el('div', { 'class': 'qty__controls' });
+
+      var stepper = el('div', { 'class': 'stepper' });
+      var minus = el('button', { type: 'button', 'aria-label': 'Diminuir a quantidade de ' + name }, '−');
+      var input = el('input', { type: 'number', min: '1', step: '1', inputmode: 'numeric', placeholder: 'Qtd.', 'aria-label': 'Quantidade de ' + name });
+      var plus = el('button', { type: 'button', 'aria-label': 'Aumentar a quantidade de ' + name }, '+');
+      minus.addEventListener('click', function () {
+        var v = parseInt(input.value, 10) || 0;
+        input.value = v > 1 ? String(v - 1) : '';
+      });
+      plus.addEventListener('click', function () { input.value = String((parseInt(input.value, 10) || 0) + 1); });
+      stepper.appendChild(minus); stepper.appendChild(input); stepper.appendChild(plus);
+
+      var unit = el('select', { 'class': 'qty__unit', 'aria-label': 'Unidade de ' + name });
+      units.forEach(function (u) { unit.appendChild(el('option', { value: u }, u)); });
+
+      var remove = el('button', { type: 'button', 'class': 'qty__remove', 'aria-label': 'Remover ' + name }, '×');
+      remove.addEventListener('click', function () {
+        check.checked = false;
+        check.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+
+      head.appendChild(remove);
+      controls.appendChild(stepper); controls.appendChild(unit);
+      row.appendChild(head); row.appendChild(controls);
+      row.hidden = true;
+      return row;
+    }
+
+    checks.forEach(function (check) {
+      rows[check.value] = makeRow(check);
+      list.appendChild(rows[check.value]);
+    });
+
+    function sync() {
+      var any = false;
+      checks.forEach(function (check) {
+        rows[check.value].hidden = !check.checked;
+        any = any || check.checked;
+      });
+      box.hidden = !any;
+    }
+    document.addEventListener('change', function (e) {
+      if (e.target && e.target.name === 'produto') sync();
+    });
+    sync();
+  }
+
+  /* produtos marcados com a quantidade e a unidade informadas */
+  function selectedItems() {
+    return $$('input[name="produto"]:checked').map(function (check) {
+      var row = $$('.qty__row').filter(function (r) { return r.getAttribute('data-product') === check.value; })[0];
+      var qty = row ? parseInt($('input', row).value, 10) : NaN;
+      return { name: check.value, qty: qty > 0 ? qty : 0, unit: row ? $('select', row).value : '' };
+    });
+  }
+
   /* ---------- formulário: monta a mensagem e abre o WhatsApp ---------- */
   function initForm() {
     var form = $('#form');
@@ -207,16 +285,17 @@
       e.preventDefault();
       var nome = $('#nome').value.trim();
       var fone = tel.value.trim();
-      var escolhidos = $$('input[name="produto"]:checked').map(function (box) { return box.value; });
-      var produto = escolhidos.length > 1
-        ? escolhidos.slice(0, -1).join(', ') + ' e ' + escolhidos[escolhidos.length - 1]
-        : (escolhidos[0] || '');
+      var itens = selectedItems();
       var valid = check('f-nome', nome.length >= 3, 'Informe seu nome.');
       valid = check('f-tel', fone.replace(/\D/g, '').length >= 10, 'Informe um telefone com DDD.') && valid;
       if (!valid) return;
 
-      var texto = 'Olá, Saguiar Premoldados! Meu nome é ' + nome + '. Gostaria de um orçamento' +
-        (produto ? ' de ' + produto : '') + '. Meu contato: ' + fone + '.';
+      var linhas = itens.map(function (i) {
+        return '• ' + i.name + (i.qty ? ': ' + i.qty.toLocaleString('pt-BR') + ' ' + i.unit : '');
+      });
+      var texto = 'Olá, Saguiar Premoldados! Meu nome é ' + nome + '.\n' +
+        (linhas.length ? 'Gostaria de um orçamento destes produtos:\n' + linhas.join('\n') : 'Gostaria de um orçamento.') +
+        '\nMeu contato: ' + fone + '.';
       var url = 'https://wa.me/' + (cfg.whatsapp || '') + '?text=' + encodeURIComponent(texto);
       var win = window.open(url, '_blank', 'noopener');
 
@@ -240,6 +319,7 @@
     initReveal();
     initCarousel();
     initMultiselect();
+    initQuantities();
     initForm();
     initYear();
   }

@@ -426,6 +426,25 @@ h2 {
 }
 .ms__option input:checked ~ span:last-child { font-weight: 600; }
 .ms__option input:focus-visible + .ms__box { outline: 2px solid var(--ink); outline-offset: 2px; }
+.qty { margin-bottom: 18px; padding: 14px 14px 6px; background: var(--paper); border: 1px solid rgba(20, 21, 23, 0.12); }
+.qty__title { margin: 0 0 10px; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #3a3b3e; }
+.qty__title em { font-style: normal; letter-spacing: 0.04em; text-transform: none; color: var(--muted); }
+.qty__row { display: grid; gap: 8px; margin-bottom: 8px; padding: 10px 12px; background: #fff; border: 1px solid rgba(20, 21, 23, 0.1); animation: pop 0.3s ease both; }
+.qty__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.qty__name { font-weight: 600; font-size: 0.98rem; line-height: 1.2; }
+.qty__controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.stepper { display: inline-flex; border: 1px solid rgba(20, 21, 23, 0.28); background: #fff; }
+.stepper button { width: 36px; height: 40px; padding: 0; border: 0; background: transparent; font-size: 1.2rem; line-height: 1; cursor: pointer; transition: background 0.15s; }
+.stepper button:hover { background: var(--yellow); }
+.stepper input {
+  width: 84px; height: 40px; padding: 0 6px; border: 0; border-inline: 1px solid rgba(20, 21, 23, 0.14); border-radius: 0;
+  text-align: center; background: #fff; font-variant-numeric: tabular-nums; -moz-appearance: textfield; appearance: textfield;
+}
+.stepper input::-webkit-inner-spin-button, .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.stepper input:focus { outline: none; background: var(--paper); }
+.qty__unit { height: 42px; padding: 0 10px; border: 1px solid rgba(20, 21, 23, 0.28); border-radius: 0; background: #fff; cursor: pointer; }
+.qty__remove { flex: none; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; font-size: 1.4rem; line-height: 1; color: var(--muted); cursor: pointer; }
+.qty__remove:hover { color: var(--ink); }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form .btn { width: 100%; justify-content: center; }
 .form__status { display: none; margin-top: 18px; padding: 16px 18px; border: 1px solid var(--ink); font-size: 0.95rem; }
